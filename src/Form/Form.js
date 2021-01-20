@@ -2,7 +2,7 @@ import { useState } from 'react';
 import giveSign from '../functions/giveSign';
 
 const FormSign = () => {
-  const [signText, setSignText] = useState('');
+  const [signText, setSignText] = useState(' ');
 
   const tellSign = (e) => {
     e.preventDefault();
@@ -21,7 +21,7 @@ const FormSign = () => {
   };
 
   return (
-    <form className="form w-2/3 mx-auto text-center">
+    <form className="form w-full md:w-3/4 lg:w-2/3 mx-auto text-center">
       <label htmlFor="year">Votre année de naissance</label>
       <input
         type="number"
@@ -32,12 +32,12 @@ const FormSign = () => {
       />
       <button
         type="submit"
-        className="bg-yellow-400 py-1.5 px-2.5 mx-3 border-2 border-solid border-transparent rounded-md hover:text-yellow-400 hover:bg-white hover:border-yellow-400"
+        className="bg-yellow-400 py-1.5 px-2.5 mx-3 my-3 border-2 border-solid border-transparent rounded-md box-border hover:text-yellow-600 hover:bg-white hover:border-yellow-600"
         onClick={tellSign}
       >
         Découvrez votre signe !
       </button>
-      <p className="inline mt-5">{signText}</p>
+      <p className="leading-5 text-lg">{signText}</p>
     </form>
   );
 };

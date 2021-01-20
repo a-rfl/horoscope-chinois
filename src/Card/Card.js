@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 const Card = ({
   signName, signDescription, signImage, children,
 }) => {
@@ -15,8 +13,8 @@ const Card = ({
   };
 
   return (
-    <div className="card mx-5 my-5 mx-1 p-4 w-2/3 md:w-1/3 lg:w-1/5 rounded-md border-4 border-yellow-800 border-solid" id={signName}>
-      <h2 className="text-2xl uppercase text-yellow-700 font-extrabold">{signName}</h2>
+    <div className="card bg-gray-100 mx-5 my-5 mx-1 p-4 w-3/4 md:w-1/3 lg:w-1/5 rounded-md box-border" id={signName}>
+      <h2 className="text-2xl uppercase text-yellow-600 font-extrabold">{signName}</h2>
       <img className="w-1/2 rounded-full mx-auto my-4" src={`img/${signImage}`} alt={`Signe du ${signName}`} />
       <div>
         {truncate(signDescription)}
