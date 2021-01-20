@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+import './App.scss';
+import Card from './Card/Card';
+import FormSign from './Form/Form';
+import signes from './data/data';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1 className="capitalize text-5xl text-center my-10">
+        horoscope chinois
+      </h1>
+      <FormSign />
+      <div className="App container flex flex-wrap items-stretch justify-center mx-auto mt-5">
+        {signes.map((signe) => (
+          <Card
+            signImage={signe.img}
+            signName={signe.nom}
+            signDescription={signe.description}
+          />
+        ))}
+      </div>
     </div>
   );
 }
