@@ -3,7 +3,6 @@ import giveSign from '../functions/giveSign';
 
 const FormSign = () => {
   const [signText, setSignText] = useState('');
-  // const [card, setCard] = useState();
 
   const tellSign = (e) => {
     e.preventDefault();
@@ -11,24 +10,14 @@ const FormSign = () => {
     const sign = giveSign(givenYear);
     setSignText(`Vous êtes ${sign} !`);
 
-    let borderOn = false;
     const cards = document.querySelectorAll('.card');
     cards.forEach((card) => {
-      if (card.classList.contains('border-yellow-800')) {
-        card.classList.remove('border-yellow-800');
-        card.classList.remove('bg-red-100');
-        card.classList.add('bg-yellow-100');
+      if (card.classList.contains('bg-yellow-200')) {
+        card.classList.remove('bg-yellow-200');
       }
     });
     const cardSign = document.getElementById(sign);
-    if (!borderOn) {
-      cardSign.classList.add('border-yellow-800');
-      cardSign.classList.add('bg-red-100');
-      cardSign.classList.remove('bg-yellow-100');
-      borderOn = true;
-    } else {
-      borderOn = false;
-    }
+    cardSign.classList.add('bg-yellow-200');
   };
 
   return (
