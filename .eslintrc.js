@@ -25,5 +25,6 @@ module.exports = {
     'linebreak-style': 'off',
     'react/jsx-one-expression-per-line': 'off',
     'jsx-a11y/label-has-associated-control': 'off',
-    "react/jsx-props-no-spreading": 'off',
+    'react/jsx-props-no-spreading': 'off',
+  },
 };
