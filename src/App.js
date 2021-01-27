@@ -8,9 +8,13 @@ import Modal from './Modal/Modal';
 
 function App() {
   const attrs = { modalClass: 'main-modal' };
+  // Modal Visibility
   const [visibility, setVisibility] = useState(false);
+  // Modal title
   const [titleModal, setTitleModal] = useState('');
+  // Modal content
   const [contentModal, setContentModal] = useState('');
+  const [imgModal, setImgModal] = useState('');
   const toggleModal = (e) => {
     e.preventDefault();
     setVisibility(!visibility);
@@ -18,6 +22,7 @@ function App() {
       const idSignClicked = e.target.id.split('-')[1];
       const signClicked = signes[idSignClicked];
       setTitleModal(signClicked.nom);
+      setImgModal(signClicked.img);
       setContentModal(signClicked.description);
     }
   };
@@ -41,7 +46,8 @@ function App() {
       </div>
       <Modal title={titleModal} color="yellow" close {...attrs} visibile={visibility}>
         <button className="btn-modal" type="button" onClick={toggleModal}>X</button>
-        {contentModal}
+        <img className="w-1/2 rounded-full mx-auto my-4" src={`img/${imgModal}`} alt={`Signe du ${titleModal}`} />
+        <p>{contentModal}</p>
       </Modal>
     </div>
   );
