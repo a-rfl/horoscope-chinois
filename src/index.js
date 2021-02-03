@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-// import App from './App';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 // import Test from './POC/test';
-import OlympicGames from './POC/OlympicGames';
+// import OlympicGames from './POC/OlympicGames';
 
 ReactDOM.render(
   <React.StrictMode>
-    <OlympicGames />
+    <App />
   </React.StrictMode>,
   document.getElementById('root'),
 );
