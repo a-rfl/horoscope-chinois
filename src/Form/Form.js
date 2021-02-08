@@ -1,13 +1,18 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+import PropTypes from 'prop-types';
 import giveSign from '../functions/giveSign';
 
-const FormSign = () => {
+const FormSign = ({ data, label }) => {
+  // Ref
+  const yearRef = useRef();
+  // State
   const [signText, setSignText] = useState(' ');
 
+  // Click event function
   const tellSign = (e) => {
     e.preventDefault();
-    const givenYear = document.getElementById('year').value;
-    const sign = giveSign(givenYear);
+    const givenYear = yearRef.current.value;
+    const sign = giveSign(givenYear, data);
     setSignText(`Vous êtes ${sign} !`);
 
     const cards = document.querySelectorAll('.card');
@@ -20,15 +25,16 @@ const FormSign = () => {
     cardSign.classList.add('bg-yellow-200');
   };
 
+  // Content
   return (
     <form className="form w-full md:w-3/4 lg:w-2/3 mx-auto text-center">
-      <label htmlFor="year">Votre année de naissance</label>
+      <label htmlFor="year">{label}</label>
       <input
         type="number"
         name="year"
-        id="year"
         className="text-center mx-2 border-b-2 border-solid border-yellow-600"
         min="1900"
+        ref={yearRef}
       />
       <button
         type="submit"
@@ -40,6 +46,15 @@ const FormSign = () => {
       <p className="leading-5 text-lg">{signText}</p>
     </form>
   );
+};
+
+FormSign.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  label: PropTypes.string,
+};
+
+FormSign.defaultProps = {
+  label: 'Label',
 };
 
 export default FormSign;

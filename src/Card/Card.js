@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const Card = ({
   signName, signDescription, signImage, children,
 }) => {
@@ -22,6 +24,12 @@ const Card = ({
       </div>
     </div>
   );
+};
+
+Card.propTypes = {
+  signImage: PropTypes.string.isRequired,
+  signName: PropTypes.string.isRequired,
+  signDescription: PropTypes.string.isRequired,
 };
 
 export default Card;

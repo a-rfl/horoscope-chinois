@@ -1,9 +1,7 @@
-import signes from '../data/data';
-
-const giveSign = (year) => {
+const giveSign = (year, data) => {
   const moduloYear = year % 12;
-  const searchModulo = (item) => item.modulo === moduloYear;
-  const signFound = signes.filter(searchModulo);
+  const searchModulo = (item) => item.id === moduloYear;
+  const signFound = data.filter(searchModulo);
   return signFound[0].nom;
 };
 
