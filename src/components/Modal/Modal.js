@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import './Modal.scss';
 
 const Modal = ({
   title, imgModal, contentModal, btnFunction, color, visibile,

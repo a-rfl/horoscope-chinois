@@ -30,6 +30,7 @@ Card.propTypes = {
   signImage: PropTypes.string.isRequired,
   signName: PropTypes.string.isRequired,
   signDescription: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default Card;

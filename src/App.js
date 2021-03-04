@@ -2,9 +2,9 @@ import './App.scss';
 import { useEffect, useRef, useState } from 'react';
 import { get } from 'axios';
 // Components
-import Card from './Card/Card';
-import FormSign from './Form/Form';
-import Modal from './Modal/Modal';
+import Card from './components/Card/Card';
+import FormSign from './components/Form/Form';
+import Modal from './components/Modal/Modal';
 
 function App() {
   const cardsRef = useRef();
@@ -49,7 +49,7 @@ function App() {
   // Content App
   return (
     <main>
-      <h1 className="capitalize text-5xl text-center my-10">
+      <h1 className="capitalize text-center my-10">
         horoscope chinois
       </h1>
       <FormSign label="Votre année de naissance" data={signs} />

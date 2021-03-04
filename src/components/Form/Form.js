@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import giveSign from '../functions/giveSign';
+import giveSign from '../../functions/giveSign';
+import './Form.scss';
 
 const FormSign = ({ data, label }) => {
   // Ref
@@ -27,23 +28,27 @@ const FormSign = ({ data, label }) => {
 
   // Content
   return (
-    <form className="form w-full md:w-3/4 lg:w-2/3 mx-auto text-center">
-      <label htmlFor="year">{label}</label>
-      <input
-        type="number"
-        name="year"
-        className="text-center mx-2 border-b-2 border-solid border-yellow-600"
-        min="1900"
-        ref={yearRef}
-      />
-      <button
-        type="submit"
-        className="bg-yellow-400 py-1.5 px-2.5 mx-3 my-3 border-2 border-solid border-transparent rounded-md box-border hover:text-yellow-600 hover:bg-white hover:border-yellow-600"
-        onClick={tellSign}
-      >
-        Découvrez votre signe !
-      </button>
-      <p className="leading-5 text-lg">{signText}</p>
+    <form className="form w-full text-center">
+      <div className="form-content">
+        <div>
+          <label htmlFor="year">{label}</label>
+          <input
+            type="number"
+            name="year"
+            className="text-center mx-2 border-b-2 border-solid"
+            min="1900"
+            ref={yearRef}
+          />
+        </div>
+        <button
+          type="submit"
+          className="py-1.5 px-2.5 mx-3 my-3 rounded-md box-border"
+          onClick={tellSign}
+        >
+          Découvrez votre signe !
+        </button>
+      </div>
+      <p className="sign">{signText}</p>
     </form>
   );
 };
