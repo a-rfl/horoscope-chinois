@@ -11,5 +11,9 @@ body {
   background-image: url('./img/bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  h1 {
+    color: $light-color-less-opacity;
+    font-size: $h1-size;
+    margin: 50px 0;
+  }
 }
