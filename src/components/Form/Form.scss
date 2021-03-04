@@ -1,0 +1,54 @@
+@import '../../variables';
+
+.form {
+  background-color: $light-color-less-opacity;
+  color: $primary-color;
+  .form-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    label {
+      font-size: $form-text-size;
+      font-weight: 500;
+    }
+    input {
+      width: 150px;
+    }
+    button {
+      background-color: transparent;
+      border: .25px solid $primary-color;
+      color: $primary-color;
+      &:hover {
+        color: $light-color;
+        background-color: $primary-color;
+        border-color: transparent;
+      }
+    }
+  }
+  .sign {
+    display: block;
+    padding-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .form {
+    font-size: 14px;
+    .form-content {
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        label {
+          font-size: 15px;
+          margin-bottom: 10px;
+        }
+      }
+      button {
+        width: 125px;
+      }
+    }
+  }
+}
+// <span>Photo by <a href="https://unsplash.com/@sahilxclicks?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Sahil Pandita</a> on <a href="https://unsplash.com/s/photos/chinese-new-year?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
