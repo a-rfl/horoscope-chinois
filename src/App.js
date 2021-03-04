@@ -53,7 +53,7 @@ function App() {
         horoscope chinois
       </h1>
       <FormSign label="Votre année de naissance" data={signs} />
-      <section className="App container flex flex-wrap items-stretch justify-center mx-auto my-5" ref={cardsRef}>
+      <section className="App flex flex-wrap mx-auto my-5" ref={cardsRef}>
         {signs.length !== 0
           ? signs.map((sign, index) => (
             <Card
@@ -64,7 +64,7 @@ function App() {
             >
               <button
                 type="button"
-                className="bg-yellow-00 py-1 px-2 text-sm rounded mt-10 w-1/2 mx-auto block"
+                className="py-1 px-2 rounded mt-10 block"
                 id={`btn-${index}`}
                 onClick={toggleModal}
               >

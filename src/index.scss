@@ -1,4 +1,5 @@
 @import "tailwindcss/dist/tailwind.min.css";
+@import './variables';
 
 body {
   margin: 0;
@@ -9,9 +10,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: url('./img/bg.jpg');
   background-size: cover;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  background-repeat: no-repeat;
+  background-position: center center;
 }

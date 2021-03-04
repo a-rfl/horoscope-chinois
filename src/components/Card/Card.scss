@@ -1,0 +1,56 @@
+@import '../../variables';
+
+.card {
+  background-color: $light-color-less-opacity;
+  width: $card-width;
+  border: 2px solid $primary-color;
+  padding: 8px;
+  height: $card-height;
+  position: relative;
+  margin: 8px 0;
+  h2 {
+    font-size: $h2-size;
+    color: $primary-color;
+  }
+  button {
+    position: absolute;
+    top: 320px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: .25px solid transparent;
+    background-color: $primary-color;
+    color: $light-color;
+    font-size: 13px;
+    &:hover {
+      background-color: transparent;
+      border-color: $primary-color;
+      color: $primary-color;
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .card {
+    width: $card-width2;
+    padding: 8px;
+    height: $card-height2;
+    button {
+      top: 260px;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .card {
+    width: $card-width3;
+    padding: 8px;
+    height: $card-height3;
+    h2 {
+      font-size: $h2-size;
+    }
+    button {
+      top: 250px;
+      font-size: 11px;
+    }
+  }
+}

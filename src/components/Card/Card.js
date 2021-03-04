@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import './Card.scss';
 
 const Card = ({
   signName, signDescription, signImage, children,
@@ -15,11 +16,11 @@ const Card = ({
   };
 
   return (
-    <div className="card bg-gray-100 mx-5 my-5 mx-1 p-4 w-3/4 md:w-1/3 lg:w-1/5 rounded-md box-border" id={signName}>
-      <h2 className="text-2xl uppercase text-yellow-600 font-extrabold">{signName}</h2>
+    <div className="card rounded-md box-border" id={signName}>
+      <h2 className="uppercase font-bold">{signName}</h2>
       <img className="w-1/2 rounded-full mx-auto my-4" src={`img/${signImage}`} alt={`Signe du ${signName}`} />
       <div>
-        {truncate(signDescription)}
+        <p>{truncate(signDescription)}</p>
         {children}
       </div>
     </div>
