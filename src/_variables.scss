@@ -2,25 +2,32 @@
 $light-color: #f0ccdf;
 $light-color-less-opacity: #f0ccdf8e;
 $primary-color: #69062e;
+$dark-color: #431d2c;
+$dark-color-less-opacity: rgba(67, 29, 44, .45);
 
 $text-color: #1d020c;
 
 /* -- FONTS -- */
 $form-text-size: 18px;
 
-$h1-size: 25px;
+$h1-size: 38px;
 $h2-size: 22px;
+
+$h2-modal-size: 30px;
 
 $text-size: 16px;
 $text-size2: 15px;
 $text-size3: 13px;
 
 /* -- SIZE -- */
+// Card
 $card-width: 300px;
 $card-height: 400px;
-
 $card-width2: 220px;
 $card-height2: 350px;
-
 $card-width3: 165px;
 $card-height3: 325px;
+
+// Modal 
+$modal-width: 350px;
+$modal-height: 300px;

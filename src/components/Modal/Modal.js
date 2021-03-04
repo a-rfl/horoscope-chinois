@@ -2,20 +2,20 @@ import PropTypes from 'prop-types';
 import './Modal.scss';
 
 const Modal = ({
-  title, imgModal, contentModal, btnFunction, color, visibile,
+  title, imgModal, contentModal, btnFunction, visibile,
 }) => (
   <div className={visibile ? 'visible' : 'invisible'}>
     <div className="modal-overlay">
       <div
-        className={`modal pt-2 px-5 pb-3 rounded bg-${color}-400 border-gray-700 border-solid w-1/4`}
+        className="modal pt-2 px-5 pb-3 rounded"
       >
-        <h2 className="text-2xl pb-5 mt-4">{title}</h2>
+        <h2 className="pb-2 mt-4">{title}</h2>
         <div className="m-2 mb-4">
           <button className="btn-modal" type="button" onClick={btnFunction}>
             X
           </button>
           <img
-            className="w-1/2 rounded-full mx-auto my-4"
+            className="w-1/2 rounded-full mx-auto"
             src={`img/${imgModal}`}
             alt={`Signe du ${title}`}
           />
@@ -31,12 +31,10 @@ Modal.propTypes = {
   imgModal: PropTypes.string,
   contentModal: PropTypes.string.isRequired,
   btnFunction: PropTypes.func.isRequired,
-  color: PropTypes.string,
   visibile: PropTypes.bool,
 };
 
 Modal.defaultProps = {
-  color: 'yellow',
   imgModal: 'default-img.jpg',
   visibile: false,
 };

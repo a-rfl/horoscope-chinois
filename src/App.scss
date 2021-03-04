@@ -13,7 +13,14 @@
 .btn-modal {
   position: absolute;
   top: 5px;
-  right: 15px;
+  right: 20px;
+  font-size: 20px;
+  color: $light-color-less-opacity;
+  transition: transform .25s;
+  &:hover {
+    color: $light-color;
+    transform: rotate(90deg);
+  }
 }
 
 @media only screen and (max-width: 1200px) {

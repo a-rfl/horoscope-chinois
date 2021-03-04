@@ -49,7 +49,7 @@ function App() {
   // Content App
   return (
     <main>
-      <h1 className="capitalize text-center my-10">
+      <h1 className="capitalize text-center font-bold">
         horoscope chinois
       </h1>
       <FormSign label="Votre année de naissance" data={signs} />
