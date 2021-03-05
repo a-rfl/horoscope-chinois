@@ -1,0 +1,83 @@
+@import "../../variables";
+/* -- Animation -- */
+@keyframes upDown {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.25);
+    background-color: $light-color-less-opacity;
+  }
+  50% {
+    transform: scale(1.5);
+    background-color: $primary-color;
+  }
+  75% {
+    transform: scale(1.25);
+    background-color: $light-color-less-opacity;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* -- STYLE -- */
+.loading {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  margin: 25px auto 0 auto;
+  p {
+    color: $light-color;
+    font-size: $loading-size;
+    margin-right: 5px;
+  }
+  .block-dot {
+    display: flex;
+    justify-content: space-around;
+    width: 75px;
+    padding-top: 20px;
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: $light-color;
+      animation: upDown 1.25s infinite alternate-reverse;
+    }
+    #dot-1 {
+      animation-delay: 0s;
+    }
+    #dot-2 {
+      animation-delay: 0.25s;
+    }
+    #dot-3 {
+      animation-delay: 0.5s;
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .loading {
+    p {
+      font-size: $loading-size2;
+    }
+    .block-dot {
+      padding-top: 15px;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .loading {
+    p {
+      font-size: $loading-size3;
+    }
+    .block-dot {
+      padding-top: 10px;
+      .dot {
+        width: 6px;
+        height: 6px;
+      }
+    }
+  }
+}

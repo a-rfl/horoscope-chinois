@@ -5,6 +5,7 @@ import { get } from 'axios';
 import Card from './components/Card/Card';
 import FormSign from './components/Form/Form';
 import Modal from './components/Modal/Modal';
+import Loading from './components/Loading/Loading';
 
 function App() {
   const cardsRef = useRef();
@@ -72,7 +73,7 @@ function App() {
               </button>
             </Card>
           ))
-          : 'loading...'}
+          : <Loading />}
       </section>
       <Modal
         title={modalContent.title}
