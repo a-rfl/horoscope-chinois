@@ -36,6 +36,22 @@
     }
   }
 }
+.active {
+  background-color: $primary-color;
+  h2, p {
+    color: $light-color;
+  }
+
+  button {
+    border: .25px solid $dark-color;
+    background-color: $light-color-less-opacity;
+    &:hover {
+      background-color: $light-color-less-opacity;
+      border-color: $primary-color;
+    }
+  }
+}
+
 
 @media only screen and (max-width: 992px) {
   .card {

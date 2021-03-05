@@ -8,7 +8,7 @@ import Modal from './components/Modal/Modal';
 
 function App() {
   const cardsRef = useRef();
-  // let cards;
+  const [cards, setCards] = useState();
   const [signs, setSigns] = useState([]);
   // Fetch the data
   const urlRequest = 'https://raw.githubusercontent.com/ltruchot/es3-to-esnext-challenges/master/011-horoscope_chinois/signes.json';
@@ -23,7 +23,7 @@ function App() {
     /* -- Axios -- */
     get(urlRequest).then((res) => {
       setSigns(res.data);
-      // cards = cardsRef.current.children;
+      setCards(cardsRef.current.children);
     });
   }, []);
 
@@ -52,7 +52,7 @@ function App() {
       <h1 className="capitalize text-center font-bold">
         horoscope chinois
       </h1>
-      <FormSign label="Votre année de naissance" data={signs} />
+      <FormSign label="Votre année de naissance" data={signs} cards={cards} />
       <section className="App flex flex-wrap mx-auto my-5" ref={cardsRef}>
         {signs.length !== 0
           ? signs.map((sign, index) => (

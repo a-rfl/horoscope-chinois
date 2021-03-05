@@ -1,9 +1,10 @@
 import { useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import giveSign from '../../functions/giveSign';
+import { addClass, removeClass } from '../../functions/toggleClass';
 import './Form.scss';
 
-const FormSign = ({ data, label }) => {
+const FormSign = ({ data, label, cards }) => {
   // Ref
   const yearRef = useRef();
   // State
@@ -16,14 +17,12 @@ const FormSign = ({ data, label }) => {
     const sign = giveSign(givenYear, data);
     setSignText(`Vous êtes ${sign} !`);
 
-    const cards = document.querySelectorAll('.card');
-    cards.forEach((card) => {
-      if (card.classList.contains('bg-yellow-200')) {
-        card.classList.remove('bg-yellow-200');
+    for (let i = 0; i < cards.length; i++) {
+      removeClass(cards[i], 'active');
+      if (cards[i].id === sign) {
+        addClass(cards[i], 'active');
       }
-    });
-    const cardSign = document.getElementById(sign);
-    cardSign.classList.add('bg-yellow-200');
+    }
   };
 
   // Content
@@ -56,10 +55,12 @@ const FormSign = ({ data, label }) => {
 FormSign.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
   label: PropTypes.string,
+  cards: PropTypes.object,
 };
 
 FormSign.defaultProps = {
   label: 'Label',
+  cards: {},
 };
 
 export default FormSign;
