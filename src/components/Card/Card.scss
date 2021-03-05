@@ -37,17 +37,19 @@
   }
 }
 .active {
-  background-color: $primary-color;
+  background-color: $secondary-color;
   h2, p {
     color: $light-color;
   }
 
   button {
+    color: $secondary-color;
     border: .25px solid $dark-color;
     background-color: $light-color-less-opacity;
     &:hover {
-      background-color: $light-color-less-opacity;
-      border-color: $primary-color;
+      background-color: transparent;
+      border-color: $light-color;
+      color: $light-color;
     }
   }
 }
