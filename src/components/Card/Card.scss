@@ -10,7 +10,7 @@
   position: relative;
   margin: 8px 0;
   &:hover {
-    transform: translateY(-5px);
+    transform: scale(1.025);
     border-color: $secondary-color;
     button {
       top: 315px;
@@ -60,6 +60,12 @@
     width: $card-width2;
     padding: 8px;
     height: $card-height2;
+    &:hover {
+      transform: scale(1);
+      button {
+        top: 260px;
+      }
+    }
     button {
       top: 260px;
     }
@@ -75,7 +81,6 @@
       font-size: $h2-size;
     }
     button {
-      top: 250px;
       font-size: 11px;
     }
   }
